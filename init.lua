@@ -933,6 +933,14 @@ require('lazy').setup({
     -- use 'Exafunction/codeium.vim'
     'github/copilot.vim',
   },
+
+  {
+    -- Markdown preview
+    'iamcco/markdown-preview.nvim',
+    config = function()
+      vim.fn['mkdp#util#install']()
+    end,
+  },
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
