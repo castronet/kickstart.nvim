@@ -253,6 +253,8 @@ require('lazy').setup({
   --  This is equivalent to:
   --    require('Comment').setup({})
 
+  'towolf/vim-helm',
+
   -- "gc" to comment visual regions/lines
   {
     'numToStr/Comment.nvim',
@@ -461,6 +463,12 @@ require('lazy').setup({
 
       -- Useful status updates for LSP.
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
+      opts = {
+        servers = {
+          docker_compose_language_service = {},
+          helm_ls = {},
+        },
+      },
       { 'j-hui/fidget.nvim', opts = {} },
 
       -- Allows extra capabilities provided by nvim-cmp
@@ -941,8 +949,6 @@ require('lazy').setup({
       vim.fn['mkdp#util#install']()
     end,
   },
-
-  'towolf/vim-helm',
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
